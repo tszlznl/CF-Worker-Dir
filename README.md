@@ -75,3 +75,21 @@ const config = {
 ## Licence
 
 MIT
+
+使用 JavaScript 进行简单的密码保护
+假设你没有服务器配置的访问权限，或者你想要一个更简单的解决方案，可以使用前端 JavaScript 来询问密码。
+但是这种方法非常不安全，因为任何人都可以查看源代码，找到密码。这只适用于非常基本的保护以阻止无意的访问者。
+  <head>
+  <meta charset="UTF-8">
+  <title>受保护的页面</title>
+  <script>
+    var password = prompt("请输入密码", "");
+    if(password != "12345") {
+      window.location.href = "access-denied.html"; // 重定向到其他页面
+    }
+  </script>
+  </head>
+  <body>
+  <p>这是一个受密码保护的页面内容。</p>
+  <!-- 你的受保护内容 -->
+  </body>
